@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+<hr>
+<font size="4"><b>祭の動画を選んでください</b></font>
+<hr>
+<form action="./" method="post">
+<p>
+    祭：<select name="matsuri">
+    <option value="祇園祭先祭">祇園祭先祭</option>
+    <option value="祇園祭後祭">祇園祭後祭</option>
+    <option value="時代祭">時代祭</option>
+    <option value="葵祭">葵祭</option>
+    <option value="鞍馬の火祭">鞍馬の火祭</option>
+    <option value="曲水の宴">曲水の宴</option>
+    <option value="送り火">送り火</option>
+    <option value="みたらし祭">みたらし祭</option>
+    </select>
+    <br><br>
+<input type="submit" value="探す">
+</p>
+</form>
+<hr>
+
+{% if url %}
+<font size="4">
+    祭: {{ matsuri }}<br>
+</font>
+<hr>
+<!-- <iframe width="280" height="156" src="{{ url }}" -->
+    <iframe width="560" height="312" src="{{ url }}"
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+{% endif %}
+<br><br>
+{% if url2 %}
+    <a href="{{ url2 }}" target=”_blank”>動画のリンク</a>
+{% endif %}
+
+</center>
+{% endblock %}
